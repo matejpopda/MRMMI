@@ -1,3 +1,3 @@
 # MRMMI
 
- matejpopda.github.io/MRMMI/ 
+ https://matejpopda.github.io/MRMMI/ 

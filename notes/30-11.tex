@@ -60,7 +60,7 @@ Podmínky if v algoritmu se pak nahradí na $if(i,k)\notin P$ a $if(i,j)\notin P
 
 Platí věta:
 \begin{theorem}
-    Pokud \matA je M-matice a $P\subset\{(i,j)\in \hat{n} \times \hat{n}| i\neqj\}$, pak algoritmus ILU s maskou P neselže
+    Pokud \matA je M-matice a $P\subset\{(i,j)\in \hat{n} \times \hat{n}| i\neq j\}$, pak algoritmus ILU s maskou P neselže
     a sestrojí neúplný LU rozklad matice \matA tvaru $\mathbb{A} = \mathbb{L} \mathbb{U} - \mathbb{R}$, který je regulární.
     
     Metoda prosté iterace s tímto předpodmíněním bude konvergovat.
@@ -136,7 +136,7 @@ V algoritmu se pak vybírá n největších prvků  v $|\cdot|$, které splní p
 
     To je silně sekvenční operace, špatně se paralelizuje, lze přeuspořádat rovnice:
 
-    
+
 
 \end{remark}
 

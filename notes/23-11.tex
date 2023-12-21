@@ -5,7 +5,9 @@
 
 \subsection{Předpodmiňování metody složených gradientů}
 Aplikací CG (konjugovaných gradientů) na předpodmíněnou soustavu 
-$\mathbb{L}^{-1}\mathbb{A}\mathbb{L}^{-1^T} y = \mathbb{L}^{-1}b, \mathbb{L}^{-1^T}y = x, \mathbb{M} = \mathbb{L}\mathbb{L}^T$
+\begin{equation*}
+\mathbb{L}^{-1}\mathbb{A}\mathbb{L}^{-1^T} y = \mathbb{L}^{-1}b, \mathbb{L}^{-1^T}y = x, \mathbb{M} = \mathbb{L}\mathbb{L}^T
+\end{equation*}
 
 Lze odvodit algoritmus PCG \todo{dopln jmeno}
 \begin{enumerate}
@@ -37,7 +39,7 @@ předpodmínění $\mathbb{M} = \mathbb{L} \mathbb{L}^T$ bude účinné, pokud $
 
 \matA je SPD s vlastními čísly: $0 < \lambda_1 \leq \lambda_2 \leq \dots \leq \lambda_n$.
 
-Poté $\varkappa(\mathbb{A}) = \frac{\lambda_n}{\lambda_1}$. Toto je dobré, pokud vlastní čísla $\mathbb{L}^{-1}\mathbb{A}\mathbb{L}^{-1^T}$ tvoří malý shlluk daleko od 0.
+Poté $\varkappa(\mathbb{A}) = \frac{\lambda_n}{\lambda_1}$. Toto je dobré, pokud vlastní čísla $\mathbb{L}^{-1}\mathbb{A}\mathbb{L}^{-1^T}$ tvoří malý shluk daleko od 0.
 
 
 
@@ -74,18 +76,18 @@ $\mathbb{M} = \frac{1}{\omega} \mathbb{I}, \omega\in\mathbb{R}$
     \varrho(\mathbb{I} - \omega \mathbb{A}) = \max_{k\in\hat{n}} |1-\omega\lambda_k| = \max |1 - 4\omega \sin^2 \frac{k\pi}{2(n+1)}|
 \end{equation*}
 
-Z toho plyne, že $\omega$ je třeab volit tak aby $1 - 4\omega \sin^2 \frac{k\pi}{2(n+1)} \in (-1,1)$, proto\begin{equation*}
+Z toho plyne, že $\omega$ je třeba volit tak aby $1 - 4\omega \sin^2 \frac{k\pi}{2(n+1)} \in (-1,1)$, proto\begin{equation*}
     1 - 4\omega \sin^2 \frac{k\pi}{2(n+1)} > 1 - 4\omega \sin^2 \frac{\pi}{2} > -1
 \end{equation*}
 Z toho plyne, že stačí volit $\omega \leq \frac{1}{2}$
 
-Pro konvergenci Richardsonovy metody je nutná a postačující podmínkak, že $\omega\in(0;\frac{1}{2}\rangle$
+Pro konvergenci Richardsonovy metody je nutná a postačující podmínka, že $\omega\in(0;\frac{1}{2}\rangle$
 
-\begin{equation*}
-    \varrho(\mathbb{I} - \omega \mathbb{A}) = \max \left\{ |1-\omega\lambda_1|, 1 - \omega\lambda_n  \right\} =
-    \max \left\{ |1-4\omega \sin^2 \frac{\pi}{2(n+1)}|, 1 - 4\omega \sin^2 \frac{n\pi}{2(n+1)}  \right\} =
+\begin{multline*}
+    \varrho(\mathbb{I} - \omega \mathbb{A}) = \max \left\{ |1-\omega\lambda_1|, 1 - \omega\lambda_n  \right\} =\\
+    \max \left\{ |1-4\omega \sin^2 \frac{\pi}{2(n+1)}|, 1 - 4\omega \sin^2 \frac{n\pi}{2(n+1)}  \right\} =\\
     \max \left\{ 1-O(h^2), 1 - 4\omega \cos^2 \frac{\pi}{2(n+1)}  \right\}
-\end{equation*}
+\end{multline*}
 
 Poslední rovnost plyne z \begin{equation*}
     \sin\frac{n\pi}{2(n+1)} = \sin \left(\frac{\pi}{2} - \frac{\pi}{2(n+1)}\right) = \cos \frac{\pi}{2(n+1)}
@@ -102,15 +104,15 @@ Pro $h \rightarrow 0+$ se konvergence zastavuje.
 $\mathbb{M} = \mathbb{D} = diag(\mathbb{A}) \implies$ Richardson s $\omega = \frac{1}{2}$
 
 \begin{multline*}
-    \varrho(\mathbb{I} - \mathbb{D}^{-1}\mathbb{A}) = \max \left\{  |1-\frac{1}{2}\lambda_1|, 1 - \frac{1}{2}\lambda_n \right\} =
-    \max \left\{ |1-2 \sin^2 \frac{\pi}{2(n+1)}|, 1 - 2 \sin^2 \frac{n\pi}{2(n+1)}  \right\} = 1 - 2 \sin^2 \frac{\pi}{2(n+1)}
+    \varrho(\mathbb{I} - \mathbb{D}^{-1}\mathbb{A}) = \max \left\{  |1-\frac{1}{2}\lambda_1|, 1 - \frac{1}{2}\lambda_n \right\} =\\
+    \max \left\{ |1-2 \sin^2 \frac{\pi}{2(n+1)}|, 1 - 2 \sin^2 \frac{n\pi}{2(n+1)}  \right\} =\\ 1 - 2 \sin^2 \frac{\pi}{2(n+1)}
     = 1 - 2 \sin^2 \frac{\pi h}{2} = 1 - O(h^2)
 \end{multline*}
 
 \subsubsection{Gauss-Seidel a SOR(w)}
 \matA je dvoucyklická a shodně uspořádaná. Proto lze použít teorii z numerické matematiky. O rychlosti konvergence rozhoduje
 $\varrho(\mathbb{I} - (\frac{1}{\omega}\mathbb{D} -\mathbb{L})^-1 )\mathbb{A}$, kde označme $G_{SOR} \coloneq \mathbb{I} - (\frac{1}{\omega}\mathbb{D} -\mathbb{L})^-1 )\mathbb{A}$.
-Vlastní čísla $\lambda\in\sigma(G_{SOR})$ a $\mu \in \sigma(G_{Jacobi})$ jsou svázaná rovnící 
+Vlastní čísla $\lambda\in\sigma(G_{SOR})$ a $\mu \in \sigma(G_{Jacobi})$ jsou svázaná rovnicí 
 $(\lambda + \omega -1 )^2 = \omega^2 \mu^2 \lambda$.
 
 Gauss-Seidel: $\omega = 1: \lambda = \mu^2$
@@ -121,18 +123,18 @@ Gauss-Seidel: $\omega = 1: \lambda = \mu^2$
 
 Všimněme si že i přesto, že GS konverguje rychleji než Jacobi tak se také konvergence zastavuje.
 
-SOR(w) : $\omega \in (0,2)$
+% SOR(w) : $\omega \in (0,2)$
+% 
+
+
+
+\includegraphics[width=0.9\linewidth]{images/23-11-SOR.jpg}
 
 
 
 
 
-
-
-
-
-
-
+\includegraphics[width=0.9\linewidth]{images/23-11-CG.jpg}
 
 
 

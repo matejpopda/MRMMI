@@ -34,6 +34,9 @@ jobs:
           root_file: main.tex
           latexmk_use_xelatex: true
           latexmk_shell_escape: true
+      - name: Upload build files
+        if: always()
+        uses: actions/upload-pages-artifact@v2
       - name: Generate redirect page
         run: |
           mkdir public
@@ -51,7 +54,6 @@ jobs:
           </html>
           EOL
       - name: Upload artifact
-        if: always()
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./public

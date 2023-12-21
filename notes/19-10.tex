@@ -6,7 +6,7 @@
 
 \begin{lemma}[O zaplnění]
     Nechť \matAsquare je SPD, $i,j\in \hat{n}, i>j, k\in \hat{n}$.\\
-    Potom $a_{ij}^{(k)} \neq 0 \Leftrightarrow a_{ij}^{(k-1)} \neq 0 nebo a_{ik}^{(k-1)} \neq 0 \wedge a_{kj}^{(k-1)} \neq 0$
+    Potom $a_{ij}^{(k)} \neq 0 \Leftrightarrow a_{ij}^{(k-1)} \neq 0$ nebo $a_{ik}^{(k-1)} \neq 0 \wedge a_{kj}^{(k-1)} \neq 0$
 \end{lemma}
 
 \begin{proof}
@@ -15,7 +15,7 @@
 
 \begin{theorem}[O zaplnění]
     Nechť \matAsquare je SPD,$i,j\in \hat{n}, i>j$.\\
-    Potom $a_{ij}^{(n-1)} \Leftrightarrow \exists$ cesta v $G(\mathbf{A})$, $i,p_1,p_2... p_t,j$ kde $\forall k \in \hat{t}, p_k < j$.
+    Potom $a_{ij}^{(n-1)} \neq 0 \Leftrightarrow \exists$ cesta v $G(\mathbf{A})$, $i,p_1,p_2... p_t,j$ kde $\forall k \in \hat{t}, p_k < j$.
 \end{theorem}
 
 \begin{proof}
@@ -36,7 +36,7 @@
     z $i \rightarrow j$ vedoucí přes $p_1,...,p_t$ zkrátí 
     alespoň o 1.
 
-    $p_1 ... p_t$ se eliminují před $j$ a $i$. Po elminaci 
+    $p_1 ... p_t$ se eliminují před $j$ a $i$. Po eliminaci 
     posledního z $p_1,...,p_t$ se $i$ a $j$ spojí hranou
 
     Z toho víme, že na pozici $a_ij$ vzniká zaplnění $\implies a_{ij}^{(n-1)}\neq 0$.
@@ -101,7 +101,7 @@ pak $\forall r \in T_i$ a $s\in T_j$ platí $e_{rs} = 0$
 
 \begin{claim}
     Nechť \matAsquare je SPD, $i,j\in\hat{n}, i>j$.\\
-    Potom $e_ij \neq 0 \Leftrightarrow j$ je předek 
+    Potom $e_{ij} \neq 0 \Leftrightarrow j$ je předek 
     nějakého $k$, pro dané $a_{ik}^{(0)}\neq 0$.
 \end{claim}
 \begin{proof}

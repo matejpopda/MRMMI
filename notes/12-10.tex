@@ -11,7 +11,7 @@ elementárních úprav.
 \begin{equation*}
     \mathbb{L}_{n-1}\dots\mathbb{L}_{2}\mathbb{L}_{1}\mathbb{A} = \tilde{\mathbb{L}}\mathbb{A} = \mathbb{U}
 \end{equation*}
-$\mathbb{U}$ je matice v horním troujúhelníkovém tvaru, $\mathbb{L}$ je v dolním troujúhelníkovém tvaru.
+$\mathbb{U}$ je matice v horním trojúhelníkovém tvaru, $\mathbb{L}$ je v dolním trojúhelníkovém tvaru.
 \begin{equation*}
     \tilde{\mathbb{L}}\mathbb{A}=\mathbb{U} \Leftrightarrow \mathbb{A} = \tilde{\mathbb{L}}^{-1}\mathbb{U}
 \end{equation*}
@@ -35,7 +35,7 @@ SPD matice je silně negativní $\implies$ přehazovat řádky a sloupce není t
 
 
 Pro \matA SPD, $\mathbb{U} = \mathbb{L}^T$\\
-$\mathbb{A} = \mathbb{L}\mathbb{L}^T$, kde $\mathbb{L}$ je v dolním troujúhelníkovém tvaru provedeme Choleského rozklad\\
+$\mathbb{A} = \mathbb{L}\mathbb{L}^T$, kde $\mathbb{L}$ je v dolním trojúhelníkovém tvaru provedeme Choleského rozklad\\
 $\mathbb{A} = \mathbb{L}\mathbb{D}\mathbb{L}^T$ - bezodmocninová metoda 
 
 
@@ -45,7 +45,7 @@ $\mathbb{A} = \mathbb{L}\mathbb{D}\mathbb{L}^T$ - bezodmocninová metoda
 \subsection{Odvození Choleského rozkladu}
 
 \begin{center}
-    \includegraphics[width=0.5\linewidth]{images/12-10-odvozeni.jpg}
+    \includegraphics[width=0.9\linewidth]{images/12-10-odvozeni.jpg}
 \end{center}
 
 
@@ -130,9 +130,9 @@ Pro řešení $\mathbb{A}x = b$ řešíme $\mathbb{L}y = b, \mathbb{D}z = y, \ma
 
     $l_{32} \neq 0$ ačkoliv $a_{32} = 0$, na pozici 3,2 došlo k zaplnění.
 
-    Faktor $\mathbb{L}$ má obecně více nenulových prvků než \matA : \matA je řídka $\centernot\implies$ $\mathbb{L}$ je řídká, $\mathbb{L}$ ,může být i kompletně zaplněná.\\
+    Faktor $\mathbb{L}$ má obecně více nenulových prvků než \matA : \matA je řídká $\centernot\implies$ $\mathbb{L}$ je řídká, $\mathbb{L}$ ,může být i kompletně zaplněná.\\
     Datové struktury neumožňují snadno přidat nový nenulový prvek, dynamické datové struktury jsou drahé
-    $\implies$ je třeba umět předpovědět množství a polohy nenulových prvků, tj. určit struktru 
+    $\implies$ je třeba umět předpovědět množství a polohy nenulových prvků, tj. určit strukturu 
     $\mathbb{L}$ na základě struktury \matA .
 \end{remark}
 
@@ -149,7 +149,7 @@ Pro strukturně nesymetrické matice je $G(\mathbb{A})$ orientovaný.
 \end{center}
 
 \begin{remark}
-    Grafy matic pocházející z diskretizací PDR (MKD, NKO, MKP) často jsou totožné s grafem sítě. 
+    Grafy matic pocházející z diskretizací PDR (MKD, MKO, MKP) často jsou totožné s grafem sítě. 
 \end{remark}
 
 

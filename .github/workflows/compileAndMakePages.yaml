@@ -36,7 +36,9 @@ jobs:
           latexmk_shell_escape: true
       - name: Upload build files
         if: always()
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-artifact@v4
+        with:
+          path: ./
       - name: Generate redirect page
         run: |
           mkdir public
